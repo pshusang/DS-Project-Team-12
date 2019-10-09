@@ -13,6 +13,9 @@
     <!--all nav bars were bootstrap navbar -->
       <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <a class="navbar-brand">
+            <img src="https://oconeecountyfire.com/wp-content/uploads/2018/11/oconeecountyfire-logo2.png" width="60" height="60" class="d-inline-block align-top" alt="">
+          </a>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link" href="dataentry.html">Data Entry</a>
@@ -29,6 +32,35 @@
         </div>
       </nav>
 
+
+<br>
+      <h2> Expired Cerifications <h2>
+        <br>
+
+        <div>
+        <table class="table table-sm table-hover">
+                    <thead>
+                      <tr>
+                        <th>First</th>
+                        <th>Last</th>
+                        <th>Agency</th>
+                        <th>Certification Name</th>
+                        <th>Expiration Period<th>
+                        <th>Certification ID<th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="m in members" @click="handleRowClick(m)">
+                        <td>{{ m.firstName }}</td>
+                        <td>{{ m.lastName }}</td>
+                        <td>{{ m.CertAgency }}</td>
+                        <td>{{ m.CertName }}</td>
+                        <td>{{m.ExPeriod}}</td>
+                        <td>{{m.CertId}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
   </body>
 
 </html>
