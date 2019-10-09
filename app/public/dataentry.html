@@ -13,22 +13,153 @@
     <!--all nav bars were bootstrap navbar -->
       <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <a class="navbar-brand">
+            <img src="https://oconeecountyfire.com/wp-content/uploads/2018/11/oconeecountyfire-logo2.png" width="60" height="60" class="d-inline-block align-top" alt="">
+          </a>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Data Entry</a>
+              <a class="nav-link" href="dataentry.html">Data Entry</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="info.html">View List</a>
+              <a class="nav-link" href="detailedview.html">View List</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="books.html">Expired Certifications</a>
+              <a class="nav-link" href="expired.html">Expired Certifications</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="books.html">Member Information</a>
+              <a class="nav-link" href="contact.html">Member Information</a>
             </li>
+          </ul>
         </div>
       </nav>
 
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="container">
+          <div class="row">
+            <div id="mainContent" class="col-md">
+              <div id="">
+                <form>
+                  <h1>Form</h1>
+                  <div class="form-group row">
+                    <label for="inputMemberName" class="col-sm-2 col-form-label">Member Name</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputMemberName" placeholder="Please enter member name">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputRadioNumber" class="col-sm-2 col-form-label">Radio Number</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputRadioNumber" placeholder="Please enter radio number">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputStation" class="col-sm-2 col-form-label">Station</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputStation" placeholder="Please enter the station name">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputExpiration" class="col-sm-2 col-form-label">Expiration Date</label>
+                    <div class="col-sm-10">
+                      <input type="date" class="form-control" id="inputExpiration" placeholder="Please enter the certifications' expiration date" v-model="recordPatient.dob">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputCertification" class="col-sm-2 col-form-label">Certification</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputCertification" placeholder="Please enter certification name">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-sm-3">
+                      <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                  </div>
+
+                </form>
+                <form>
+                <h1>Viewlist</h1>
+                <table class="table table-sm table-hover">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Member Name</th>
+                      <th>Radio Number</th>
+                      <th>Station</th>
+                      <th>Certifications</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="" id="customCheck1">
+                        <label class="" for="customCheck1"></label>
+                      </div>
+                      </td>
+                      <td>Mark Otto</td>
+                      <td>R18</td>
+                      <td>1</td>
+                      <td> Fire Investigator</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="" id="customCheck1">
+                        <label class="" for="customCheck1"></label>
+                      </div>
+                      </td>
+                      <td>Jacob Thornton</td>
+                      <td>R72</td>
+                      <td>2</td>
+                      <td> Public Educator 1 & 2</td>
+                </tr>
+                <tr>
+                  <td>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="" id="customCheck1">
+                        <label class="" for="customCheck1"></label>
+                      </div>
+                      </td>
+                      <td>Jennifer Smith</td>
+                      <td>R23</td>
+                      <td>4</td>
+                      <td> Mandatory Firefighter & Firefighter I & II</td>
+              </tr>
+                  </tbody>
+                </table>
+
+                <div class="form-group row">
+                  <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                  </div>
+
+                  <div class="form-group row">
+                    <div class="col-md-2">
+                      <button type="submit" class="btn btn-primary">Delete</button>
+                    </div>
+                  </div>
+
+            </div>
+
+          </form>
+          </div>
+        </div>
+</div>
+</div>
+
+
   </body>
+
+
+
 
 </html>
