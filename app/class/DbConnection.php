@@ -14,7 +14,7 @@ class DbConnection
       }
 
       try {
-          $dsn = 'mysql:host='.getenv('MYSQL_HOST').';dbname='.getenv('MYSQL_DATABASE'].';charset=utf8');
+          $dsn = 'mysql:host='.getenv('MYSQL_HOST').';dbname='.getenv('MYSQL_DATABASE').';charset=utf8');
           error_log($dsn);
           self::$connection = new PDO(
              $dsn,
