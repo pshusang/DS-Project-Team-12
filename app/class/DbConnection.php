@@ -1,26 +1,16 @@
 <?php
-
 class DbConnection
 {
   protected static $connection;
-
   // function __create() {
   //
   // }
-
     static function getConnection() {
       if (self::$connection) {
         return self::$connection;
       }
-
       try {
-<<<<<<< HEAD
-          $dsn = 'mysql:host='.getenv('MYSQL_HOST').';dbname='.getenv('MYSQL_DATABASE').';charset=utf8');
-=======
-          error_log("Made it to try");
           $dsn = 'mysql:host='.getenv('MYSQL_HOST').';dbname='.getenv('MYSQL_DATABASE').';charset=utf8';
-          error_log("Made it to part 2");
->>>>>>> Chetan
           error_log($dsn);
           self::$connection = new PDO(
              $dsn,
