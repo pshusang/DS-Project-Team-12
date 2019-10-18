@@ -6,8 +6,6 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 $stmt = $db->prepare('SELECT * FROM MEMBER');
 $stmt->execute();
-
-
 $members = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
