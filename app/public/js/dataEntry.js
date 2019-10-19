@@ -1,12 +1,12 @@
 var dataEntryApp = new Vue({
-  el: '#dataEntryInfo',
+  el: '#dataEntryApp',
   data: {
     members: []
     //options: 'Mark'
   },
   methods: {
     fetchMembers() {
-      fetch('api/dataentry/')
+      fetch('api/dataentry/index.php')
       .then(response => response.json())
       .then(json => { dataEntryApp.members = json })
     }
