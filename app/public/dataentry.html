@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>DS Entry Form</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/site.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -32,6 +32,7 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Member Information</a>
             </li>
+
           </ul>
         </div>
       </nav>
@@ -43,41 +44,99 @@
       <div class="container">
           <div class="row">
             <div id="mainContent" class="col-md">
-              <div id="">
+              <div id="memberFormApp">
                 <form>
-                  <h1>Form</h1>
+                  <h1>Member Record</h1>
                   <div class="form-group row">
-                    <label for="inputMemberName" class="col-sm-2 col-form-label">Member Name</label>
+                    <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputMemberName" placeholder="Please enter member name">
+                      <input type="text" class="form-control" id="inputFirstName" placeholder="Please enter first name">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="inputRadioNumber" class="col-sm-2 col-form-label">Radio Number</label>
+                    <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputRadioNumber" placeholder="Please enter radio number">
+                      <input type="text" class="form-control" id="inputLastName" placeholder="Please enter last name">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputPosition" class="col-sm-2 col-form-label">Position</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputPosition" placeholder="Please enter position">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputStreet" class="col-sm-2 col-form-label">Street</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputStreet" placeholder="Please enter street">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputCity" class="col-sm-2 col-form-label">City</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputCity" placeholder="Please enter city">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputState" class="col-sm-2 col-form-label">State</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputState" placeholder="Please enter state">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group row">
+                    <label for="inputZipCode" class="col-sm-2 col-form-label">Zip Code</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputZipCode" placeholder="Please enter zip code">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group row">
+                    <label for="inputRadio" class="col-sm-2 col-form-label">Radio</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputRadio" placeholder="Please enter radio number">
                     </div>
                   </div>
 
                   <div class="form-group row">
                     <label for="inputStation" class="col-sm-2 col-form-label">Station</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputStation" placeholder="Please enter the station name">
+                      <input type="text" class="form-control" id="inputStation" placeholder="Please enter the station number">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputDOB" class="col-sm-2 col-form-label">Date of Birth</label>
+                    <div class="col-sm-10">
+                      <input type="date" class="form-control" id="inputDOB" placeholder="Please enter date of birth">
                     </div>
                   </div>
 
                   <div class="form-group row">
                     <label for="inputExpiration" class="col-sm-2 col-form-label">Expiration Date</label>
                     <div class="col-sm-10">
-                      <input type="date" class="form-control" id="inputExpiration" placeholder="Please enter the certifications' expiration date" v-model="recordPatient.dob">
+                      <input type="date" class="form-control" id="inputExpiration" placeholder="Please enter the expiration date">
                     </div>
                   </div>
 
                   <div class="form-group row">
-                    <label for="inputCertification" class="col-sm-2 col-form-label">Certification</label>
+                    <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputCertification" placeholder="Please enter certification name">
+                      <input type="text" class="form-control" id="inputGender" placeholder="Please enter gender">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputPosition" class="col-sm-2 col-form-label">Position</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputPosition" placeholder="Please enter the position">
                     </div>
                   </div>
 
@@ -88,55 +147,41 @@
                   </div>
 
                 </form>
-                <form>
-                <h1>Viewlist</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+<!--Form Member-->
+
+                <div class="container">
+                    <div class="row">
+                      <div id="mainContent" class="col-md">
+                        <div id="memberEntryApp">
+
+
+                <h1>Member Information</h1>
                 <table class="table table-sm table-hover">
                   <thead>
                     <tr>
-                      <th></th>
+                      <th>Member ID</th>
                       <th>Member Name</th>
+                      <th>Gender</th>
+                      <th>Address</th>
+                      <th>Phone</th>
                       <th>Radio Number</th>
                       <th>Station</th>
-                      <th>Certifications</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="" id="customCheck1">
-                        <label class="" for="customCheck1"></label>
-                      </div>
-                      </td>
-                      <td>Mark Otto</td>
-                      <td>R18</td>
-                      <td>1</td>
-                      <td> Fire Investigator</td>
+                    <tr v-for='m in members'>
+                      <td>{{m.memberID}}</td>
+                      <td>{{m.firstName}} {{m.lastName}} ({{m.pos}})</td>
+                      <td>{{m.gender}}</td>
+                      <td>{{m.street}} {{m.city}} {{m.state}} {{m.zip}}</td>
+                      <td>{{m.phone}}</td>
+                      <td>{{m.radioNo}}</td>
+                      <td>{{m.stationNo}}</td>
                   </tr>
-                  <tr>
-                    <td>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="" id="customCheck1">
-                        <label class="" for="customCheck1"></label>
-                      </div>
-                      </td>
-                      <td>Jacob Thornton</td>
-                      <td>R72</td>
-                      <td>2</td>
-                      <td> Public Educator 1 & 2</td>
-                </tr>
-                <tr>
-                  <td>
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="" id="customCheck1">
-                        <label class="" for="customCheck1"></label>
-                      </div>
-                      </td>
-                      <td>Jennifer Smith</td>
-                      <td>R23</td>
-                      <td>4</td>
-                      <td> Mandatory Firefighter & Firefighter I & II</td>
-              </tr>
                   </tbody>
                 </table>
 
@@ -153,16 +198,105 @@
 
             </div>
 
-          </form>
           </div>
         </div>
 </div>
 </div>
+<!--Table Member-->
 
+<!--Form Certifications-->
+<div class="container">
+    <div class="row">
+      <div id="mainContent" class="col-md">
+        <div id="certicationApp">
+          <form @submit.prevent = "handleSubmit">
+            <h1>Certification</h1>
+            <div class="form-group row">
+              <label for="inputCertificationName" class="col-sm-2 col-form-label">Certification Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputCertificationName" placeholder="Please enter certification name" v-model="certification.certificationName">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputCertificationAgency" class="col-sm-2 col-form-label">Certification Agency</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputCertificationAgency" placeholder="Please enter certification agency" v-model="certification.certificationAgency">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputExpirationPeriod" class="col-sm-2 col-form-label">Expiration Period</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputExpirationPeriod" placeholder="Please enter the expiration period" v-model="certification.expirationPeriod">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-3">
+                <button type="submit" class="btn btn-primary">Add</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--Table Certification-->
+
+<div class="container">
+    <div class="row">
+      <div id="mainContent" class="col-md">
+        <div id="certificationEntryApp">
+<h1>Certification Information</h1>
+<table class="table table-sm table-hover">
+  <thead>
+    <tr>
+      <th>Certification ID</th>
+      <th>Certification Name</th>
+      <th>Certification Agency</th>
+      <th>Expiration Period</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for='c in certifications'>
+      <td>{{c.certificationID}}</td>
+      <td>{{c.certificationName}}</td>
+      <td>{{c.certificationAgency}}</td>
+      <td>{{c.expirationPeriod}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="form-group row">
+  <div class="col-md-2">
+    <button type="submit" class="btn btn-primary">Edit</button>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary">Delete</button>
+    </div>
+  </div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="js/memberEntry.js"></script>
+<script src="js/certificationEntry.js"></script>
+<script src="js/memberform.app.js"></script>
+<script src="js/certificationForm.app.js"></script>
 
   </body>
-
-
-
-
 </html>
