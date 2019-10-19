@@ -18,7 +18,7 @@
           </a>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="home.html">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="dataentry.html">Data Entry</a>
@@ -39,51 +39,56 @@
 <br>
 <br>
 <br>
-<BR>
-<div class="card">
+<br>
+
+<div class="card" id = "memberInfo">
   <h5 class="card-header"><span class="badge badge-danger">Expired Certifications</span></h5>
   <div class="card-body">
-  <table id="expiredList" class="table table-hover">
+
+  <div class="filter">
+    <h6>Certification</h6>
+    <select v-model="filter.cert">
+      <option value="">(all)</option>
+      <option v-for='m in members'>{{m.certificationName}}</option>
+    </select>
+
+  </div>
+
+  <table id="expiredDetail" class="table table-hover">
     <thead class="thead-dark">
       <tr>
         <th scope="col">First Name</th>
         <th scope="col">Last Name</th>
         <th scope="col">Agency</th>
         <th scope="col">Title</th>
-        <th scope="col">Expiration Period</th>
-        <th scope="col"> Cert. ID</th>
+        <th scope="col">Expired Date</th>
+        <th scope="col">Expired or Not</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>American Heart Association</td>
-        <td>CPR</td>
-        <td>2 years</td>
-        <td>0001</td>
+      <tr v-for='m in members' v-if="filter.cert=='' || filter.cert == m.certificationName">
+        <td>{{ m.firstName }}</td>
+        <td>{{ m.lastName }}</td>
+        <td>{{ m.certificationName }}</td>
+        <td>{{ m.certificationAgency }}</td>
+        <td>{{m.expDate}}</td>
+        <td>{{ displayWaitingSince(m.expDate)}}</td>
       </tr>
-      <tr>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>American Red Cross</td>
-        <td>CPR</td>
-        <td>2 years</td>
-        <td>0002</td>
-      </tr>
-      <tr>
-        <td>Jennifer</td>
-        <td>Smith</td>
-        <td>Athens Technical College</td>
-        <td>Firefighter I</td>
-        <td>3 years</td>
-        <td>0003</td>
-        </tr>
     </tbody>
   </table>
+
   </div>
 </div>
-</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="js/memberDetail.js"></script>
+<script src="js/tablesort.min.js"></script>
+<script>
+  new Tablesort(document.getElementById('expiredDetail'));
+</script>
+
+<div>
   <footer id="footer">OCONEE FIRE RESCUE, GA</footer>
  </div>
 </body>

@@ -3,9 +3,12 @@ var memberDetailApp = new Vue({
   data: {
     members: [],
     certifications:[],
+    memberContact:[],
     filter: {
       fn: '',
-      cert:''
+      cert:'',
+      sn:'',
+      rn:''
     }
     //options: 'Mark'
   },
@@ -20,10 +23,23 @@ var memberDetailApp = new Vue({
       fetch('api/certificationDetailFolder/')
       .then(response => response.json())
       .then(json => { memberDetailApp.certifications = json })
+    },
+
+    fetchMemberContact() {
+      fetch('api/MemberContactFolder/')
+      .then(response => response.json())
+      .then(json => { memberDetailApp.memberContact = json })
+    },
+    displayWaitingLocalDate(d) {
+      return moment.utc(d).local().format("YYYY MMM Do");
+    },
+    displayWaitingSince(d) {
+      return moment.utc(d).local().fromNow();
     }
   },
   created() {
     this.fetchMembers();
     this.fetchCertifications();
+    this.fetchMemberContact();
   }
 });
