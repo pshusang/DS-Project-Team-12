@@ -5,13 +5,13 @@ var certificationEntryApp = new Vue({
     //options: 'Mark'
   },
   methods: {
-    fetchMembers() {
-      fetch('api/cerficationEntry/index.php')
+    fetchCertifications() {
+      fetch('api/certificationEntry/index.php')
       .then(response => response.json())
       .then(json => { certificationEntryApp.certifications = json })
     }
   },
   created() {
-    this.fetchMembers();
+    this.fetchCertifications();
   }
 });

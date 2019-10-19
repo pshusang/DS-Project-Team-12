@@ -4,25 +4,21 @@
  $db = DbConnection::getConnection();
 
 $stmt = $db->prepare(
-  'INSERT INTO MEMBER
-  (memberID, firstName, lastName, radioNo, stationNo, startDate, pos)
-  VALUES (?,?,?,?,?,?``)'
+  'INSERT INTO CERTIFICATION
+  (certificationID, certificationName, certificationAgency, expirationPeriod)
+  VALUES (?, ?, ?, ?)'
 );
 
 
 $stmt->execute([
-  $_POST['memberID'],
-  $_POST['firstName'],
-  $_POSt['lastName'],
-  $_POSt['radioNo'],
-  $_POSt['stationNo'],
-  $_POSt['radioNo'],
-  $_POSt['startDate'],
-  $_POSt['pos']
+  $_POST['certificationID'],
+  $_POST['certificationName'],
+  $_POSt['certificationAgency'],
+  $_POSt['expirationPeriod']
 ]);
 
-// TODO: Error Checking
-
+//  TODO: Error Checking
+//
 //Step 4: Output
 header('HTTP/1.1 303 See other');
 //300 redirect with a git
