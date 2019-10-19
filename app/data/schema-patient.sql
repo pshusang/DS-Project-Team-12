@@ -21,21 +21,31 @@ CREATE TABLE MEMBER (
 );
 
 CREATE TABLE CERTIFICATION (
-  certificationID INT NOT NULL,
+  certificationID INT NOT NULL AUTO_INCREMENT,
   memberID INT NOT NULL,
-  certification_agency VARCHAR (100),
-  expiration_period DATETIME,
+  certificationName VARCHAR(100),
+  certificationAgency VARCHAR (100),
+  expirationPeriod INT NOT NULL,
   PRIMARY KEY (certificationID),
   FOREIGN KEY (memberID) REFERENCES MEMBER (memberID)
 );
 
 INSERT INTO MEMBER (memberID, firstName, lastName, radioNo, stationNo, isActive, email, phone, street, city, state, zip, dob, startDate, gender, pos) VALUES
-("SOME-REALLY-LONG-1234", "Sylvia", "Hernandez", "2012-09-01",  "F"),
-("SOME-REALLY-SHORT-5678", "Vish", "Balasubramanian", "1950-12-15",  "M"),
-("SOME-UNIQUE-ABCDE1", "J", "Doe", "1950",  ""),
-("SOME-DUMMY-DATA", "Pepper", "Potts", "1990-01-31",  "F");
+(1,	"Mark",	"Otto",	18,	18,	0,	"motto@gmail.com",	"1275 E 10th St",	"Bloomington",	"IN",	47405,	1960-09-01 00:00:00,	2010-06-03 00:00:00,	"M",	"Firefighter"),
+(2,	"John",	"Doe",	12,	1,	0,	"jdoe@gmail.com",	"1275 E 10th St",	"Bloomington",	"IN",	47403,	1950-03-02 00:00:00,	2000-06-02 00:00:00,	"F",	"Firefighter assistant");
 
 
+INSERT INTO CERTIFICATION (memberID, certificationName, certificationAgency, expirationPeriod) VALUES
+(1, "CPR for Healthcare Providers", "American Heart Association", 2),
+(1, "CPR for Professional Rescuer", "American Red Cross", 2),
+(2, "CPR for Professional Rescuer", "American Red Cross", 2),
+(2, "Firefighter 1", "Athens Technical College", 3),
+(2, "Firefighter 1", "Ivy Technical College", 3),
+(1, "POST", "Georgia POST Academy", 5);
+
+SELECT * FROM MEMBER as m, CERTIFICATION as c WHERE m.memberID = c.memberID;
+SELECT * FROM MEMBER;
+SELECT * FROM CERTIFICATION;
 --
 -- CREATE TABLE PHONE (
 --             phoneID INT NOT NULL,
