@@ -4,7 +4,7 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$stmt = $db->prepare('SELECT DISTINCT m.firstName, m.lastName, c.certificationName, c.certificationAgency FROM MEMBER as m, CERTIFICATION as c WHERE m.memberID = c.memberID');
+$stmt = $db->prepare('SELECT * FROM CERTIFICATION');
 $stmt->execute();
 
 

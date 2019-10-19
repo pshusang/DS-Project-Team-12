@@ -1,7 +1,12 @@
 var memberDetailApp = new Vue({
   el: '#memberInfo',
   data: {
-    members: []
+    members: [],
+    certifications:[],
+    filter: {
+      fn: '',
+      cert:''
+    }
     //options: 'Mark'
   },
   methods: {
@@ -9,9 +14,16 @@ var memberDetailApp = new Vue({
       fetch('api/memberDetailFolder/')
       .then(response => response.json())
       .then(json => { memberDetailApp.members = json })
+    },
+
+    fetchCertifications() {
+      fetch('api/certificationDetailFolder/')
+      .then(response => response.json())
+      .then(json => { memberDetailApp.certifications = json })
     }
   },
   created() {
     this.fetchMembers();
+    this.fetchCertifications();
   }
 });
