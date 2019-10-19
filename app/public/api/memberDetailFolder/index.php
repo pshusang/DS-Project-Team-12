@@ -6,8 +6,6 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 $stmt = $db->prepare('SELECT DISTINCT m.firstName, m.lastName, c.certificationName, c.certificationAgency FROM MEMBER as m, CERTIFICATION as c WHERE m.memberID = c.memberID');
 $stmt->execute();
-
-
 $members = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
