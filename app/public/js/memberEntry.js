@@ -1,5 +1,5 @@
-var dataEntryApp = new Vue({
-  el: '#dataEntryApp',
+var memberEntryApp = new Vue({
+  el: '#memberEntryApp',
   data: {
     members: []
     //options: 'Mark'
@@ -8,7 +8,7 @@ var dataEntryApp = new Vue({
     fetchMembers() {
       fetch('api/dataentry/index.php')
       .then(response => response.json())
-      .then(json => { dataEntryApp.members = json })
+      .then(json => { memberEntryApp.members = json })
     }
   },
   created() {
