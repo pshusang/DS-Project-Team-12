@@ -4,8 +4,7 @@
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$stmt = $db->prepare('SELECT m.firstName, m.lastName, c.certificationName, c.certificationAgency, c.expirationPeriod, mc.expDate, mc.renewDate
-  FROM MEMBER as m, CERTIFICATION as c, MEMBER_CERTIFICATION as mc WHERE m.memberID = mc.memberID AND c.certificationID = mc.certificationID');
+$stmt = $db->prepare('SELECT * FROM MEMBER');
 $stmt->execute();
 $members = $stmt->fetchAll();
 

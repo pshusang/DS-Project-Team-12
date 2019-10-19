@@ -14,11 +14,11 @@
       <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <a class="navbar-brand">
-            <img src="https://oconeecountyfire.com/wp-content/uploads/2018/11/oconeecountyfire-logo2.png" width="60" height="60" class="d-inline-block align-top" alt="">
+            <img src="https://oconeecountyfire.com/wp-content/uploads/2018/11/oconeecountyfire-logo2.png" width="80" height="80" class="d-inline-block align-top" alt="">
           </a>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="home.html">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="dataentry.html">Data Entry</a>
@@ -40,50 +40,59 @@
       <br>
       <br>
 
-    <div class="card">
+    <div class="card" id = "memberInfo">
       <h2>Member Information</h2>
+
+      <div class="filter">
+        <h7>Station Number</h7>
+        <select v-model="filter.sn">
+          <option value="">(all)</option>
+          <option v-for='ms in memberContact'>{{ms.stationNo}}</option>
+        </select>
+
+        <h7>Radio Number</h7>
+        <select v-model="filter.rn">
+          <option value="">(all)</option>
+          <option v-for='ms in memberContact'>{{ms.radioNo}}</option>
+        </select>
+
+      </div>
+
       <table id="contactList" class="table table-hover">
         <div class="card-body">
         <thead class="thead-dark">
           <tr>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
-            <th scope="col">Radio No.</th>
             <th scope="col">Station No.</th>
+            <th scope="col">Radio No.</th>
             <th scope="col">Email Address</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>R18</td>
-            <td>12</td>
-            <td><a href="mailto:markotto@ocfr.com">markotto@ocfr.com</a></td>
+          <tr v-for='ms in memberContact' v-if="filter.sn=='' || filter.sn == ms.stationNo && filter.rn=='' || filter.rn == ms.radioNo ">
+            <td>{{ ms.firstName }}</td>
+            <td>{{ ms.lastName }}</td>
+            <td>{{ ms.stationNo }}</td>
+            <td>{{ ms.radioNo }}</td>
+            <td>{{ ms.email }}</td>
           </tr>
-          <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>R72</td>
-            <td>22</td>
-            <td><a href="mailto:jthornton@ocfr.com">jthornton@ocfr.com</a></td>
           </tr>
-          <tr>
-            <td>Jennifer</td>
-            <td>Smith</td>
-            <td>R23</td>
-            <td>3</td>
-            <td><a href="mailto:jennsmith@ocfr.com">jennsmith@ocfr.com</a></td>
-            </tr>
         </tbody>
       </table>
+
     </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="js/memberDetail.js"></script>
     <script src="js/tablesort.min.js"></script>
     <script>
       new Tablesort(document.getElementById('contactList'));
     </script>
-  </div>
-  </div>
+
+    <div>
     <footer id="footer">OCONEE FIRE RESCUE, GA</footer>
    </div>
   </body>
