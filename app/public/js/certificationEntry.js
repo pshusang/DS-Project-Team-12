@@ -2,7 +2,6 @@ var certificationEntryApp = new Vue({
   el: '#certificationEntryApp',
   data: {
     certifications: []
-    //options: 'Mark'
   },
   methods: {
     fetchCertifications() {
@@ -15,3 +14,5 @@ var certificationEntryApp = new Vue({
     this.fetchCertifications();
   }
 });
+
+// created by pun

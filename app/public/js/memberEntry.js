@@ -6,7 +6,7 @@ var memberEntryApp = new Vue({
   },
   methods: {
     fetchMembers() {
-      fetch('api/dataentry/index.php')
+      fetch('api/dataEntry/index.php')
       .then(response => response.json())
       .then(json => { memberEntryApp.members = json })
     }
@@ -15,3 +15,5 @@ var memberEntryApp = new Vue({
     this.fetchMembers();
   }
 });
+
+// created by pun

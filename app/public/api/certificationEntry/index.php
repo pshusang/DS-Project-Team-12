@@ -19,3 +19,5 @@ $json = json_encode($certifications, JSON_PRETTY_PRINT);
 header('Content-Type: application/json');
 //Design for a connection through JSON
 echo $json;
+
+//created by pun

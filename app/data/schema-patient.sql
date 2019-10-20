@@ -1,7 +1,7 @@
 USE dsfinalproject;
 
 CREATE TABLE MEMBER (
-  memberID INT NOT NULL,
+  memberID INTEGER NOT NULL AUTO_INCREMENT,
   firstName VARCHAR (50),
   lastName VARCHAR (50),
   radioNo INT,
@@ -13,8 +13,8 @@ CREATE TABLE MEMBER (
   city VARCHAR (50),
   state VARCHAR (50),
   zip INT,
-  dob DATETIME,
-  startDate DATETIME,
+  dob DATE,
+  startDate DATE,
   gender VARCHAR (1),
   pos VARCHAR (50),
   PRIMARY KEY (memberID)
@@ -22,43 +22,39 @@ CREATE TABLE MEMBER (
 
 CREATE TABLE CERTIFICATION (
   certificationID INT NOT NULL AUTO_INCREMENT,
-  memberID INT NOT NULL,
   certificationName VARCHAR(100),
   certificationAgency VARCHAR (100),
   expirationPeriod INT NOT NULL,
-  PRIMARY KEY (certificationID),
-  FOREIGN KEY (memberID) REFERENCES MEMBER (memberID)
+  PRIMARY KEY (certificationID)
 );
 
-INSERT INTO MEMBER (memberID, firstName, lastName, radioNo, stationNo, isActive, email, phone, street, city, state, zip, dob, startDate, gender, pos) VALUES
-(1,	"Mark",	"Otto",	18,	18,	0,	"motto@gmail.com",	"1275 E 10th St",	"Bloomington",	"IN",	47405,	1960-09-01 00:00:00,	2010-06-03 00:00:00,	"M",	"Firefighter"),
-(2,	"John",	"Doe",	12,	1,	0,	"jdoe@gmail.com",	"1275 E 10th St",	"Bloomington",	"IN",	47403,	1950-03-02 00:00:00,	2000-06-02 00:00:00,	"F",	"Firefighter assistant");
+CREATE TABLE MEMBER_CERTIFICATION(
+memberID INT NOT NULL,
+certificationID INT NOT NULL,
+expDate DATE not null,
+renewDate DATE,
+FOREIGN KEY (memberID) REFERENCES MEMBER(memberID),
+FOREIGN KEY (certificationID) REFERENCES CERTIFICATION(certificationID));
 
+INSERT INTO MEMBER (firstName, lastName, radioNo, stationNo, isActive, email, phone, street, city, state, zip, dob, startDate, gender, pos) VALUES
+("Mark", "Otto", 18,	18,	TRUE,	"motto@gmail.com","8124578603","1275 E 10th St",	"Bloomington",	"IN",	47405,	"1960-09-01",	"2010-06-03",	"M",	"Firefighter"),
+("Kathryn", "Pryde", 12,	1,	TRUE,	"jdoe@gmail.com","8123342039",	"1275 E 10th St",	"Bloomington",	"IN",	47403,	"1950-03-02",	"2000-06-02",	"F",	"Firefighter assistant");
 
-INSERT INTO CERTIFICATION (memberID, certificationName, certificationAgency, expirationPeriod) VALUES
-(1, "CPR for Healthcare Providers", "American Heart Association", 2),
-(1, "CPR for Professional Rescuer", "American Red Cross", 2),
-(2, "CPR for Professional Rescuer", "American Red Cross", 2),
-(2, "Firefighter 1", "Athens Technical College", 3),
-(2, "Firefighter 1", "Ivy Technical College", 3),
-(1, "POST", "Georgia POST Academy", 5);
+INSERT INTO CERTIFICATION (certificationName, certificationAgency, expirationPeriod) VALUES
+("CPR for Healthcare Providers", "American Heart Association", 2),
+("CPR for Professional Rescuer", "American Red Cross", 2),
+("Firefighter 1", "Athens Technical College", 3),
+("Firefighter 1", "Ivy Technical College", 3),
+("POST", "Georgia POST Academy", 5);
+
+INSERT INTO MEMBER_CERTIFICATION (memberID, certificationID, expDate, renewDate) VALUES
+(1, 1, "2018-10-10",null),
+(1, 2, "2019-12-10",null),
+(1, 3, "2020-10-10",null),
+(2, 5, "2018-03-29",null),
+(2, 3, "2017-04-11",null),
+(2, 1, "2015-12-04",null);
 
 SELECT * FROM MEMBER as m, CERTIFICATION as c WHERE m.memberID = c.memberID;
 SELECT * FROM MEMBER;
 SELECT * FROM CERTIFICATION;
---
--- CREATE TABLE PHONE (
---             phoneID INT NOT NULL,
---             memberID INT NOT NULL,
---     workPhone varchar(12),
---     mobilePhone VARCHAR (12),
---     PRIMARY KEY (phoneID),
---     FOREIGN KEY (memberID) REFERENCES MEMBER (memberID)
--- );
---
--- CREATE TABLE USERS (
---             userID INT NOT NULL,
---     passwrd VARCHAR (100) NOT NULL,
---     email VARCHAR (50),
---     PRIMARY KEY (userID)
--- );
