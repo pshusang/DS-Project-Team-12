@@ -9,9 +9,9 @@ $stmt = $db->prepare(
 
 
 $stmt->execute(
-//   [
-//   $_POST['memberID'],
-// ]
+  [
+  $_POST['memberID']
+]
 
 // Needs to post memberID of that specific row to delete the record.
 );

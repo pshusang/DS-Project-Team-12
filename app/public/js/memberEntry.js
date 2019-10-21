@@ -1,7 +1,8 @@
 var memberEntryApp = new Vue({
   el: '#memberEntryApp',
   data: {
-    members: []
+    members: [],
+    member: {}
   },
   methods: {
     fetchMembers() {
@@ -13,7 +14,7 @@ var memberEntryApp = new Vue({
     handleDelete() {
     fetch('api/dataDelete/post.php', {
       method:'POST',
-      body: JSON.stringify(this.members),
+      body: JSON.stringify(this.member),
       headers:{
         "Content-Type": "application/json; charset=utf-8"
       }
@@ -24,11 +25,34 @@ var memberEntryApp = new Vue({
       console.error('WORK TRIAGE ERROR:');
       console.error(err);
       })
+
+      this.handleReset();
+    },
+
+    handleReset() {
+      this.member = {
+        firstName: '',
+        lastName: '',
+        radioNo: '',
+        stationNo: '',
+        pos: '',
+        isActive:'',
+        email: '',
+        phone: '',
+        street:'',
+        city:'',
+        state:'',
+        zip:'',
+        dob:'',
+        startDate:'',
+        gender:''
+      }
     }
 
   },
   created() {
     this.fetchMembers();
+    this.handleReset();
   }
 });
 

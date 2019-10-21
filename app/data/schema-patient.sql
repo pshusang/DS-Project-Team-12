@@ -33,8 +33,8 @@ memberID INT NOT NULL,
 certificationID INT NOT NULL,
 expDate DATE not null,
 renewDate DATE,
-FOREIGN KEY (memberID) REFERENCES MEMBER(memberID),
-FOREIGN KEY (certificationID) REFERENCES CERTIFICATION(certificationID));
+FOREIGN KEY (memberID) REFERENCES MEMBER(memberID) ON DELETE CASCADE,
+FOREIGN KEY (certificationID) REFERENCES CERTIFICATION(certificationID) ON DELETE CASCADE);
 
 INSERT INTO MEMBER (firstName, lastName, radioNo, stationNo, isActive, email, phone, street, city, state, zip, dob, startDate, gender, pos) VALUES
 ("Mark", "Otto", 18,	18,	TRUE,	"motto@gmail.com","8124578603","1275 E 10th St",	"Bloomington",	"IN",	47405,	"1960-09-01",	"2010-06-03",	"M",	"Firefighter"),
