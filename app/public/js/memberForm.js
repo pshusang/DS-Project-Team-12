@@ -21,6 +21,7 @@ var memberFormApp = new Vue({
 
       this.handleReset();
     },
+
     handleReset() {
       this.members = {
         firstName: '',

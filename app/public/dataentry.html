@@ -184,6 +184,7 @@
                   <th>Phone</th>
                   <th>Radio Number</th>
                   <th>Station Number</th>
+                  <<th>Delete Record</th>
                 </tr>
               </thead>
               <tbody>
@@ -195,6 +196,7 @@
                   <td>{{m.phone}}</td>
                   <td>{{m.radioNo}}</td>
                   <td>{{m.stationNo}}</td>
+                  <td><button type="submit" class="btn btn-primary" @click="handleDelete()">Delete</button></td>
               </tr>
               </tbody>
             </table>
@@ -206,7 +208,7 @@
 
               <div class="form-group row">
                 <div class="col-md-2">
-                  <button type="submit" class="btn btn-primary">Delete</button>
+                  <button class="btn btn-primary">Delete</button>
                 </div>
               </div>
 
