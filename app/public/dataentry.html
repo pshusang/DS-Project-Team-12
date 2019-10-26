@@ -165,8 +165,8 @@
             </div>
           </div>
         </div>
-<!--Form Member-->
-
+<!--Form ADD Member-->
+<!--Table Member-->
         <div class="container">
             <div class="row">
               <div id="mainContent" class="col-md">
@@ -202,7 +202,7 @@
               <form @submit.prevent="handleDelete()">
 
               <div class="form-group row">
-              <label for="inputFirstName" class="col-sm-2 col-form-label">Member ID</label>
+              <label for="inputFirstName" class="col-sm-10 col-form-label">Member ID</label>
               <div class="col-sm-10">
                 <input type="number" class="form-control" id="inputMemberID" placeholder="Please enter Member ID" v-model="member.memberID">
               </div>
@@ -215,19 +215,145 @@
               </div>
               </form>
             </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+<div class="container">
+    <div class="row">
+      <div id="mainContent" class="col-md">
+        <div id="memberUpdateApp">
+          <div class="form-group row">
+            <form @submit.prevent="handleUpdate">
+
+            <h2>Member Update Form</h2>
+            <div class="form-group row">
+            <label for="inputFirstName" class="col-sm-2 col-form-label">Member ID</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="inputMemberID" placeholder="Please enter Member ID" v-model="members.memberID">
+            </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="Please enter first name" v-model="members.firstName">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputLastName" placeholder="Please enter last name" v-model="members.lastName">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputPosition" class="col-sm-2 col-form-label">Is Active</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputPosition" placeholder="Please enter TRUE or FALSE" v-model="members.isActive">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputPosition" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputPosition" placeholder="Please enter email" v-model="members.email">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputPosition" class="col-sm-2 col-form-label">Phone</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputPosition" placeholder="Please enter phone number" v-model="members.phone">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputPosition" class="col-sm-2 col-form-label">Position</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputPosition" placeholder="Please enter position" v-model="members.pos">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputStreet" class="col-sm-2 col-form-label">Street</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputStreet" placeholder="Please enter street" v-model="members.street">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputCity" class="col-sm-2 col-form-label">City</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputCity" placeholder="Please enter city" v-model="members.city">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputState" class="col-sm-2 col-form-label">State</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputState" placeholder="Please enter state" v-model="members.state">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputZipCode" class="col-sm-2 col-form-label">Zip Code</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputZipCode" placeholder="Please enter zip code" v-model="members.zip">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputRadio" class="col-sm-2 col-form-label">Radio</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputRadio" placeholder="Please enter radio number" v-model="members.radioNo">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputStation" class="col-sm-2 col-form-label">Station</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputStation" placeholder="Please enter the station number" v-model="members.stationNo">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputDOB" class="col-sm-2 col-form-label">Date of Birth</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputDOB" placeholder="Please enter date of birth" v-model="members.dob">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputExpiration" class="col-sm-2 col-form-label">Start Date</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputExpiration" placeholder="Please enter the start date" v-model="members.startDate">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputGender" placeholder="Please enter gender M or F" v-model="members.gender">
+              </div>
+            </div>
 
             <div class="form-group row">
               <div class="col-md-2">
                 <button type="submit" class="btn btn-primary">Edit</button>
               </div>
-          </div>
+            </div>
 
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!--Table Member-->
+
 
 <!--Form Certifications-->
 <div class="container">
@@ -320,6 +446,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="js/memberEntry.js"></script>
+<script src="js/memberUpdate.js"></script>
 <script src="js/certificationEntry.js"></script>
 <script src="js/memberForm.js"></script>
 <script src="js/certificationForm.js"></script>
