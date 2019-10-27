@@ -38,7 +38,10 @@ FOREIGN KEY (certificationID) REFERENCES CERTIFICATION(certificationID) ON DELET
 
 INSERT INTO MEMBER (firstName, lastName, radioNo, stationNo, isActive, email, phone, street, city, state, zip, dob, startDate, gender, pos) VALUES
 ("Mark", "Otto", 18,	18,	TRUE,	"motto@gmail.com","8124578603","1275 E 10th St",	"Bloomington",	"IN",	47405,	"1960-09-01",	"2010-06-03",	"M",	"Firefighter"),
-("Kathryn", "Pryde", 12,	1,	TRUE,	"jdoe@gmail.com","8123342039",	"1275 E 10th St",	"Bloomington",	"IN",	47403,	"1950-03-02",	"2000-06-02",	"F",	"Firefighter assistant");
+("Kathryn", "Pryde", 1,	8,	TRUE,	"kpryde@gmail.com","7075551234",	"1123 Xavier School Drive",	"Wakinsville",	"GA",	306077,	"1950-03-02",	"2000-06-02",	"F",	"Cheif");
+("Piori", "Raspustin", 841, 8, False, "praspustin@gmail.com", "2065559876", "A31 Mother Russia Road", "Seattle", "WA", 98133, "1940-02-08", "2007-11-12", "M", "Firefighter");
+("Warren", "Worthington", 122, 1, False, "wworthington@gmail.com", "7065553945", "1140 Experiment Station Road", "Watkinsville", "GA", 10230, "1943-02-08", "2004-06-08", "M", "Firefighter");
+
 
 INSERT INTO CERTIFICATION (certificationName, certificationAgency, expirationPeriod) VALUES
 ("CPR for Healthcare Providers", "American Heart Association", 2),

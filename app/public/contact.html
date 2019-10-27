@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>DS Entry Form</title>
+    <title>DS contact</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/site.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -58,9 +58,13 @@
 
       </div>
 
-      <table id="contactList" class="table table-hover">
+
+      <div class="col-sm">
+        <div id="mainContent" class="col-md">
+      <table id="contactList" class="table table-hover" style="width:90%">
         <div class="card-body">
-        <thead class="thead-dark">
+        <!--thead class="thead-dark"-->
+        <thead>
           <tr>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
@@ -80,20 +84,36 @@
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button onclick="exportTableToCSV('contact.csv')" type="submit" class="btn btn-primary">Download</button>
+      </div>
+      </div>
 
     </div>
     </div>
+
+    <!--div class="form-group row">
+      <div class="col-sm-10">
+        <button onclick="exportTableToCSV('contact.csv')" type="submit" class="btn btn-primary">Download</button>
+    </div>
+  </div-->
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="js/memberDetail.js"></script>
     <script src="js/tablesort.min.js"></script>
-    <script>
-      new Tablesort(document.getElementById('contactList'));
-    </script>
-
-    <div>
-    <footer id="footer">OCONEE FIRE RESCUE, GA</footer>
-   </div>
+    <script>new Tablesort(document.getElementById('contactList'));</script>
+    <script src="js/download.js"></script>
+    <cite>codexworld.com/export-html-table-data-to-csv-using-javascript/</cite>
   </body>
+
+<!--footer id="footer"-->>
+<div>
+  <footer id="footer">OCONEE FIRE RESCUE, GA</footer>
+ </div>
+
 </html>
