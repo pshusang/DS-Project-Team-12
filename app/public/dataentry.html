@@ -48,7 +48,7 @@
                 <form @submit.prevent = "handleSubmit">
                   <h1><u>Members</u></h1>
                   <br>
-                  <h2>Member Form</h2>
+                  <h2>Member Add Form</h2>
                   <div class="form-group row">
                     <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
                     <div class="col-sm-10">
@@ -199,8 +199,10 @@
             </table>
 
             <div class="form-group row">
-              <form @submit.prevent="handleDelete()">
 
+
+              <form @submit.prevent="handleDelete()">
+              <h2>Delete Member</h2>
               <div class="form-group row">
               <label for="inputFirstName" class="col-sm-10 col-form-label">Member ID</label>
               <div class="col-sm-10">
