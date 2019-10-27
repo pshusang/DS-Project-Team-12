@@ -230,7 +230,7 @@
           <div class="form-group row">
             <form @submit.prevent="handleUpdate">
 
-            <h2>Member Update Form</h2>
+            <h2>Member Edit Form</h2>
             <div class="form-group row">
             <label for="inputFirstName" class="col-sm-2 col-form-label">Member ID</label>
             <div class="col-sm-10">
@@ -345,7 +345,7 @@
 
             <div class="form-group row">
               <div class="col-md-2">
-                <button type="submit" class="btn btn-primary">Edit</button>
+                <button type="submit" class="btn btn-primary">Update</button>
               </div>
             </div>
 
@@ -444,20 +444,57 @@
     </div>
     </form>
   </div>
+</div>
+</div>
+</div>
+</div>
 
 <!--Certification Edit-->
-<div class="form-group row">
-  <div class="col-md-2">
-    <button type="submit" class="btn btn-primary">Edit</button>
+
+<div class="container">
+    <div class="row">
+      <div id="mainContent" class="col-md">
+        <div id="certificationUpdateApp">
+          <form @submit.prevent = "handleUpdate">
+            <h2>Certification Edit Form</h2>
+            <div class="form-group row">
+              <label for="inputCertificationID" class="col-sm-2 col-form-label">Certification ID</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputCertificationID" placeholder="Please enter Certification ID" v-model="certifications.certificationID">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputCertificationName" class="col-sm-2 col-form-label">Certification Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputCertificationName" placeholder="Please enter certification name" v-model="certifications.certificationName">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputCertificationAgency" class="col-sm-2 col-form-label">Certification Agency</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputCertificationAgency" placeholder="Please enter certification agency" v-model="certifications.certificationAgency">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputExpirationPeriod" class="col-sm-2 col-form-label">Expiration Period</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputExpirationPeriod" placeholder="Please enter the expiration period" v-model="certifications.expirationPeriod">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-3">
+                <button type="submit" class="btn btn-primary">Update</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-
-</div>
-
-</div>
-</div>
-</div>
-</div>
-
 
 <!--Member Certification-->
 <div class="container">
@@ -527,6 +564,7 @@
 <script src="js/memberEntry.js"></script>
 <script src="js/memberUpdate.js"></script>
 <script src="js/certificationEntry.js"></script>
+<script src="js/certificationUpdate.js"></script>
 <script src="js/memberForm.js"></script>
 <script src="js/certificationForm.js"></script>
 
