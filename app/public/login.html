@@ -32,71 +32,60 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Member Information</a>
             </li>
-
         </div>
       </nav>
-<br>
-<br>
-<br>
-<br>
-<br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
-<div class="card" id = "memberInfo">
-  <h5 class="card-header">Certification Expiration</h5>
-  <div class="card-body">
+<cite>https://www.w3schools.com/howto/howto_css_login_form.asp</cite>
+      <!-- Button to open the modal login form -->
+  <br>
+  <button onclick="document.getElementById('id01').style.display='block'">Login</button>
 
-  <div class="filter">
-    <h6>Certification</h6>
-    <select v-model="filter.cert">
-      <option value="">(all)</option>
-      <option v-for='m in members'>{{m.certificationName}}</option>
-    </select>
+  <!-- The Modal -->
+  <div id="id01" class="modal">
+    <span onclick="document.getElementById('id01').style.display='none'"
+  class="close" title="Close Modal">&times;</span>
 
+    <!-- Modal Content -->
+    <form class="modal-content animate" action="/action_page.php">
+      <div class="imgcontainer">
+        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
   </div>
 
-  <table id="expiredDetail" class="table table-hover">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Agency</th>
-        <th scope="col">Title</th>
-        <th scope="col">Expired Date</th>
-        <th scope="col">Expired or Not</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for='m in members' v-if="filter.cert=='' || filter.cert == m.certificationName">
-        <td>{{ m.firstName }}</td>
-        <td>{{ m.lastName }}</td>
-        <td>{{ m.certificationName }}</td>
-        <td>{{ m.certificationAgency }}</td>
-        <td>{{m.expDate}}</td>
-        <td>{{ displayWaitingSince(m.expDate)}}</td>
-      </tr>
-    </tbody>
-  </table>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="js/memberDetail.js"></script>
+    <script src="js/tablesort.min.js"></script>
+    <script>
+      new Tablesort(document.getElementById('contactList'));
+    </script>
 
-  </div>
-</div>
-
-<div class="form-group row">
-  <div class="col-sm-10">
-    <button type="submit" class="btn btn-primary">Download</button>
-  </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="js/memberDetail.js"></script>
-<script src="js/tablesort.min.js"></script>
-<script>
-  new Tablesort(document.getElementById('expiredDetail'));
-</script>
-
-<div>
-  <footer id="footer">OCONEE FIRE RESCUE, GA</footer>
- </div>
-</body>
-
+    <div>
+    <footer id="footer">OCONEE FIRE RESCUE, GA</footer>
+   </div>
+  </body>
 </html>
