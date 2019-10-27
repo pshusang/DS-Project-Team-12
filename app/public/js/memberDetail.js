@@ -26,7 +26,7 @@ var memberDetailApp = new Vue({
     },
 
     fetchMemberContact() {
-      fetch('api/MemberContactFolder/')
+      fetch('api/memberContactFolder/')
       .then(response => response.json())
       .then(json => { memberDetailApp.memberContact = json })
     },
