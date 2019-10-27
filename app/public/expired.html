@@ -77,6 +77,13 @@
     </tbody>
   </table>
 
+
+  <div class="form-group row">
+      <div class="col-sm-15">
+        <button onclick="exportTableToCSV('expired.csv')" type="submit" class="btn btn-primary">Download</button>
+    </div>
+    </div>
+
   </div>
 </div>
 
@@ -87,7 +94,8 @@
 <script>
   new Tablesort(document.getElementById('expiredDetail'));
 </script>
-
+<script src="js/download.js"></script>
+<!--<cite>codexworld.com/export-html-table-data-to-csv-using-javascript/</cite>-->
 <div>
   <footer id="footer">OCONEE FIRE RESCUE, GA</footer>
  </div>
