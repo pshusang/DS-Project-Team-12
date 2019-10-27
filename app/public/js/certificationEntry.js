@@ -31,6 +31,7 @@ var certificationEntryApp = new Vue({
 
     handleReset() {
       this.certification = {
+        certificationID: '',
         certificationName: '',
         certificationAgency: '',
         expirationPeriod: ''
