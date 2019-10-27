@@ -496,11 +496,11 @@
     </div>
   </div>
 
-<!--Member Certification-->
+<!--Member Certification form and table-->
 <div class="container">
     <div class="row">
       <div id="mainContent" class="col-md">
-        <div id="certificationApp">
+        <div id="mcForm">
           <form @submit.prevent = "handleSubmit">
             <h1><u>Member Certification</u></h1>
             <br>
@@ -508,28 +508,28 @@
             <div class="form-group row">
               <label for="inputMemberID" class="col-sm-2 col-form-label">Member ID</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputMemberID" placeholder="Please enter member ID" v-model="">
+                <input type="number" class="form-control" id="inputMemberID" placeholder="Please enter member ID" v-model="mc.memberID">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputCertificationID" class="col-sm-2 col-form-label">Certification ID</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputCertificationID" placeholder="Please enter certification ID" v-model="">
+                <input type="number" class="form-control" id="inputCertificationID" placeholder="Please enter certification ID" v-model="mc.certificationID">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputExpirationDate" class="col-sm-2 col-form-label">Expiration Date</label>
               <div class="col-sm-10">
-                <input type="date" class="form-control" id="inputExpirationDate" placeholder="Please enter the expiration date" v-model="">
+                <input type="date" class="form-control" id="inputExpirationDate" placeholder="Please enter the expiration date" v-model="mc.expDate">
               </div>
             </div>
 
             <div class="form-group row">
               <label for="inputRenewDate" class="col-sm-2 col-form-label">Renew Date</label>
               <div class="col-sm-10">
-                <input type="date" class="form-control" id="inputRenewDate" placeholder="Please enter the renew date" v-model="">
+                <input type="date" class="form-control" id="inputRenewDate" placeholder="Please enter the renew date" v-model="mc.renewDate">
               </div>
             </div>
 
@@ -539,23 +539,51 @@
               </div>
             </div>
 
-            <div class="form-group row">
-              <div class="col-sm-3">
-                <button type="submit" class="btn btn-primary">Edit</button>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-sm-3">
-                <button type="submit" class="btn btn-primary">Delete</button>
-              </div>
-            </div>
           </form>
         </div>
       </div>
     </div>
   </div>
 
+<div class="container">
+      <div class="row">
+        <div id="mainContent" class="col-md">
+          <div id="mcEntry">
+  <h2>Certification Records</h2>
+  <table class="table table-sm table-hover">
+    <thead>
+      <tr>
+        <th>Member ID</th>
+        <th>Certification ID </th>
+        <th>Expiration Date</th>
+        <th>Renew Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for='c in mcs'>
+        <td>{{c.memberID}}</td>
+        <td>{{c.certificationID}}</td>
+        <td>{{c.expDate}}</td>
+        <td>{{c.renewDate}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="form-group row">
+    <div class="col-sm-3">
+      <button type="submit" class="btn btn-primary">Edit</button>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-3">
+      <button type="submit" class="btn btn-primary">Delete</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
 
 
 
@@ -567,6 +595,9 @@
 <script src="js/certificationUpdate.js"></script>
 <script src="js/memberForm.js"></script>
 <script src="js/certificationForm.js"></script>
+<script src="js/mcEntry.js"></script>
+<script src="js/mcForm.js"></script>
+
 
   </body>
 </html>
