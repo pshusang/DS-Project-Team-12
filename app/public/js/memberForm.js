@@ -5,7 +5,7 @@ var memberFormApp = new Vue({
   },
   methods: {
     handleSubmit() {
-    fetch('api/dataEntry/post.php', {
+    fetch('api/dataentry/post.php', {
       method:'POST',
       body: JSON.stringify(this.members),
       headers:{
